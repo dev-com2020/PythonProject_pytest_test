@@ -1,8 +1,10 @@
 import pytest
+from pytest_mock import mocker
 
-# Integracja pytest z Behave
+
 @pytest.fixture(scope="function", autouse=True)
-def inject_mocker(mocker):
-    """Inject mocker into Behave context"""
-    from behave.runner import Context
-    Context.mocker = mocker
+def context():
+    class Context(object):
+        from behave.runner import Context
+        Context.mocker = mocker
+    return Context()
