@@ -1,0 +1,52 @@
+Feature: Verify book name added in Library
+
+  Scenario: Verify Book name
+    Given Book details ... passed in 0.001s
+    Then Verify book name ... passed in 0.000s
+
+Feature: Check login table
+
+  Scenario: Check login func
+    Given Collection of credentials ... passed in 0.001s
+      | username | password |
+      | user1    | pwd1     |
+      | user2    | pwd2     |
+    Then user should be ok ... passed in 0.000s
+
+Feature: Multi information
+
+  Scenario: Check login
+    Given user enters name and password ... passed in 0.000s
+      """
+      Behave
+      Pwd123
+      """
+    Then user should be logged ... passed in 0.000s
+
+Feature: Payment Types
+
+  Scenario: Verify user has two payment options
+    Given User is on Payment screen ... passed in 0.000s
+    When User clicks on Payment types ... passed in 0.001s
+    Then User should get Types cash method ... passed in 0.000s
+
+Feature: Schedule
+
+  Scenario: Verify Day and Night Schedule
+    Given I reach office at "day" shift ... passed in 0.000s
+    And I reach office at "night" shift ... passed in 0.000s
+
+Feature: User Information
+
+  Scenario Outline: Check login -- @1.1 Credentials
+    Given user enters "user1" and "pwd1" ... passed in 0.000s
+    Then user should be logged in ... passed in 0.000s
+
+  Scenario Outline: Check login -- @1.2 Credentials
+    Given user enters "user2" and "pwd2" ... passed in 0.000s
+    Then user should be logged in ... passed in 0.000s
+
+  Scenario Outline: Check login -- @1.3 Credentials
+    Given user enters "user3" and "pwd3" ... passed in 0.000s
+    Then user should be logged in ... passed in 0.000s
+
